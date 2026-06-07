@@ -8,12 +8,12 @@ body {
 
 :root {
     --background: #ffffff;
-    --foreground: #171717;
+    --foreground: #545454;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
+        --background: #545454;
         --foreground: #ededed;
     }
 }
@@ -24,4 +24,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    color: black;
+    margin: 10px;
 }
