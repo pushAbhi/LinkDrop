@@ -14,6 +14,7 @@ async function postData() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
+            name: "Link Name",
             originalUrl: "localhost:3000",
         }),
     });
