@@ -7,6 +7,21 @@ async function getData() {
     console.log(data);
 }
 
+async function postData() {
+    const response = await fetch("/api/links", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            originalUrl: "localhost:3000",
+        }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+}
+
 export default function Page() {
     return (
         <div className="flex flex-col justify-center items-center">
@@ -14,6 +29,7 @@ export default function Page() {
                 Create Your Link Page in seconds
             </h1>
             <button onClick={getData}>Press</button>
+            <button onClick={postData}>Press</button>
         </div>
     );
 }
