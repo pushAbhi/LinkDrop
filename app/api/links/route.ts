@@ -11,13 +11,15 @@ export async function GET() {
 
     const links = await prisma.link.findMany({
         where: {
-            clerkId: userId,
+            userId: userId,
         },
         select: {
-            id: true,
-            name: true,
+            title: true,
             url: true,
             createdAt: true,
+            enabled: true,
+            clickCount: true,
+            order: true
         },
     });
 
@@ -34,8 +36,8 @@ export async function POST(request: NextResponse) {
     try {
         const newLink = await prisma.link.create({
             data: {
-                clerkId: userId,
-                name,
+                userId: userId,
+                title: "",
                 url: originalUrl,
             },
         });

@@ -8,17 +8,26 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id          String   @id @default(cuid())
+  email       String   @unique
+  username    String   @unique
+  clerkId     String   @unique
+  displayName String?
+  bio         String?
+  createdAt   DateTime @default(now())
+  links       Link[]
 }
 
 model Link {
-  id  Int       @id @default(autoincrement())
-  clerkId String
-  name  String @unique
-  url String @unique
-  createdAt DateTime @default(now())
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  title      String
+  url        String   @unique
+  createdAt  DateTime @default(now())
+  enabled    Boolean  @default(true)
+  clickCount Int      @default(0)
+  order      Int      @default(0)
 
-  @@unique([clerkId, url])
+  @@unique([userId, url])
 }
