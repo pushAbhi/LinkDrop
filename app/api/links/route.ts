@@ -6,7 +6,22 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET() {
     const { isAuthenticated, redirectToSignIn, userId } = await auth();
 
-    return Response.json({ message: "Hello World", clerkID: userId });
+    if (!userId)
+        return Response.json({ error: "Unauthorized" }, { status: 401 });
+
+    const links = await prisma.link.findMany({
+        where: {
+            clerkId: userId,
+        },
+        select: {
+            id: true,
+            name: true,
+            url: true,
+            createdAt: true,
+        },
+    });
+
+    return Response.json({ links: links, clerkID: userId });
 }
 
 // create link
