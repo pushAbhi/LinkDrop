@@ -27,7 +27,7 @@ export async function GET() {
 }
 
 // create link
-export async function POST(request: NextResponse) {
+export async function POST(request: NextRequest) {
     const { isAuthenticated, redirectToSignIn, userId } = await auth();
     if (!userId)
         return Response.json({ error: "Unauthorized" }, { status: 401 });
