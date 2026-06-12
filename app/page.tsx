@@ -56,7 +56,7 @@ const STEPS = [
 const STATS = [
   { n: "10k+", label: "pages created" },
   { n: "2M+", label: "total clicks tracked" },
-  { n: "< 60s", label: "setup time" },
+  { n: "<60s", label: "setup time" },
 ];
 
 export default function LandingPage() {
@@ -217,11 +217,11 @@ export default function LandingPage() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 pt-10 border-t border-white/6 flex items-center gap-10 flex-wrap">
+        <div className="mt-20 pt-10 border-t border-white/6 flex items-center gap-20 flex-wrap justify-center">
           {STATS.map((s) => (
-            <div key={s.n}>
-              <p className="text-[22px] font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
-              <p className="text-xs text-white/35 mt-1 m-0 tracking-widest">{s.label}</p>
+            <div key={s.n} className="flex flex-col items-center">
+              <p className="text-5xl font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
+              <p className="text-xl text-white/35 mt-1 m-0 tracking-widest">{s.label}</p>
             </div>
           ))}
         </div>
