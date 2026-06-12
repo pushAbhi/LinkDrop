@@ -3,19 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { Show } from "@clerk/nextjs";
+
 type FooterLink = {
   label: string;
   href: string;
-  highlight?: boolean;
-  button?: boolean;
 };
 
 const footerLinks: Record<string, FooterLink[]> = {
   LinkDrop: [
     { label: "Pricing", href: "#" },
     { label: "Documentation", href: "#" },
-    { label: "Login", href: "/sign-in", highlight: true },
-    { label: "Signup", href: "/sign-up", button: true },
   ],
   Company: [
     { label: "Legals", href: "#" },
@@ -82,15 +80,17 @@ export default function LandingPage() {
             <a href="#how-it-works" className="text-[13px] text-white/50 no-underline tracking-wide hover:text-white transition-colors">
               How it works
             </a>
-            <Link href="/sign-in" className="text-[13px] text-white/50 no-underline hover:text-white transition-colors">
-              Sign in
-            </Link>
-            <Link
-              href="/sign-up"
-              className="text-[13px] font-semibold text-[#0a0a0a] bg-[#fca311] px-5 py-2 rounded-lg no-underline tracking-tight hover:bg-amber-400 transition-colors"
-            >
-              Get started
-            </Link>
+            <Show when="signed-out">
+              <Link href="/sign-in" className="text-[13px] text-white/50 no-underline hover:text-white transition-colors">
+                Sign in
+              </Link>
+              <Link
+                href="/sign-up"
+                className="text-[13px] font-semibold text-[#0a0a0a] bg-[#fca311] px-5 py-2 rounded-lg no-underline tracking-tight hover:bg-amber-400 transition-colors"
+              >
+                Get started
+              </Link>
+            </Show>
           </div>
 
           {/* Mobile toggle */}
@@ -111,6 +111,8 @@ export default function LandingPage() {
           <div className="md:hidden px-6 pb-6 pt-4 border-t border-white/6 flex flex-col gap-4">
             <a href="#features" className="text-sm text-white/60 no-underline">Features</a>
             <a href="#how-it-works" className="text-sm text-white/60 no-underline">How it works</a>
+            <Show when="signed-out">
+
             <Link href="/sign-in" className="text-sm text-white/60 no-underline">Sign in</Link>
             <Link
               href="/sign-up"
@@ -118,6 +120,7 @@ export default function LandingPage() {
             >
               Get started
             </Link>
+            </Show>
           </div>
         )}
       </nav>
@@ -158,12 +161,14 @@ export default function LandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <Link
-                href="/sign-in"
-                className="inline-flex items-center px-7 py-3.5 rounded-[10px] font-semibold text-[15px] text-white/70 border border-white/12underline tracking-tight hover:border-white/25 hover:text-white transition-colors"
-              >
-                Sign in
-              </Link>
+              <Show when="signed-out">
+                <Link
+                  href="/sign-in"
+                  className="inline-flex items-center px-7 py-3.5 rounded-[10px] font-semibold text-[15px] text-white/70 border border-white/12underline tracking-tight hover:border-white/25 hover:text-white transition-colors"
+                >
+                  Sign in
+                </Link>
+              </Show>
             </div>
 
             <p className="mt-4 text-xs text-white/25 tracking-widest">
@@ -319,28 +324,12 @@ export default function LandingPage() {
             <div key={col} className="flex flex-col gap-3">
               <p className="text-xs text-white/35 mb-1">{col}</p>
               {links.map((link) =>
-                link.button ? (
                   <Link
-                    key={link.label}
-                    href={link.href}
-                    className="inline-block text-sm font-semibold text-white bg-[#5b6ef5] hover:bg-[#4a5ce0] px-5 py-1.5 rounded-lg no-underline transition-colors w-fit"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={`text-sm font-semibold no-underline transition-colors ${
-                      link.highlight
-                        ? "text-[#5b6ef5] hover:text-[#7b8ef7]"
-                        : "text-white/75 hover:text-white"
-                    }`}
-                  >
+                  href={link.href}>
                     {link.label}
                   </Link>
                 )
-              )}
+              }
             </div>
           ))}
         </div>
