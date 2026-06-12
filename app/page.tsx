@@ -66,8 +66,8 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-[#f0ede8] font-sans">
 
       {/* ── NAVBAR ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/85 backdrop-blur-md border-b border-white/[0.06]">
-        <div className="max-w-[1100px] mx-auto px-6 h-[60px] flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/85 backdrop-blur-md border-b border-white/6">
+        <div className="max-w-275 mx-auto px-6 h-15 flex items-center justify-between">
 
           {/* Logo */}
           <span className="text-[18px] font-black tracking-tight">
@@ -108,7 +108,7 @@ export default function LandingPage() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden px-6 pb-6 pt-4 border-t border-white/[0.06] flex flex-col gap-4">
+          <div className="md:hidden px-6 pb-6 pt-4 border-t border-white/6 flex flex-col gap-4">
             <a href="#features" className="text-sm text-white/60 no-underline">Features</a>
             <a href="#how-it-works" className="text-sm text-white/60 no-underline">How it works</a>
             <Link href="/sign-in" className="text-sm text-white/60 no-underline">Sign in</Link>
@@ -123,7 +123,7 @@ export default function LandingPage() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="pt-36 pb-24 px-6 max-w-[1100px] mx-auto">
+      <section className="pt-36 pb-24 px-6 max-w-275 mx-auto">
 
         {/* Eyebrow */}
         <div className="mb-7">
@@ -143,7 +143,7 @@ export default function LandingPage() {
               <em className="not-italic text-[#fca311]">one link.</em>
             </h1>
 
-            <p className="text-[17px] leading-relaxed text-white/55 mb-10 max-w-[420px]">
+            <p className="text-[17px] leading-relaxed text-white/55 mb-10 max-w-105">
               Stop scattering your audience. One clean page. All your links.
               Share it everywhere in under a minute.
             </p>
@@ -160,7 +160,7 @@ export default function LandingPage() {
               </Link>
               <Link
                 href="/sign-in"
-                className="inline-flex items-center px-7 py-3.5 rounded-[10px] font-semibold text-[15px] text-white/70 border border-white/[0.12] no-underline tracking-tight hover:border-white/25 hover:text-white transition-colors"
+                className="inline-flex items-center px-7 py-3.5 rounded-[10px] font-semibold text-[15px] text-white/70 border border-white/12underline tracking-tight hover:border-white/25 hover:text-white transition-colors"
               >
                 Sign in
               </Link>
@@ -173,10 +173,10 @@ export default function LandingPage() {
 
           {/* Right: product preview */}
           <div className="flex justify-center">
-            <div className="w-[300px] bg-[#111111] rounded-[20px] border border-white/[0.08] overflow-hidden">
+            <div className="w-75 bg-[#111111] rounded-[20px] border border-white/8flow-hidden">
 
               {/* Browser chrome */}
-              <div className="px-4 py-3.5 border-b border-white/[0.06] flex items-center gap-2.5">
+              <div className="px-4 py-3.5 border-b border-white/6 flex items-center gap-2.5">
                 <div className="flex gap-1.5">
                   {["bg-[#ff5f57]", "bg-[#febc2e]", "bg-[#28c840]"].map((c) => (
                     <div key={c} className={`w-2 h-2 rounded-full ${c}`} />
@@ -190,7 +190,7 @@ export default function LandingPage() {
               {/* Profile */}
               <div className="p-7">
                 <div className="text-center mb-6">
-                  <div className="w-[60px] h-[60px] rounded-full bg-[#fca311] flex items-center justify-center text-[22px] font-black text-[#0a0a0a] mx-auto mb-3">
+                  <div className="w-15 h-15 rounded-full bg-[#fca311] flex items-center justify-center text-[22px] font-black text-[#0a0a0a] mx-auto mb-3">
                     J
                   </div>
                   <p className="font-bold text-[15px] text-[#f0ede8] m-0">John Doe</p>
@@ -201,7 +201,7 @@ export default function LandingPage() {
                   {LINKS.map((item) => (
                     <div
                       key={item.label}
-                      className="flex items-center justify-between px-3.5 py-2.5 bg-[#1a1a1a] rounded-[10px] border border-white/[0.06] cursor-pointer hover:bg-[#222] transition-colors"
+                      className="flex items-center justify-between px-3.5 py-2.5 bg-[#1a1a1a] rounded-[10px] border border-white/6 cursor-pointer hover:bg-[#222] transition-colors"
                     >
                       <div className="flex items-center gap-2.5">
                         <span className="text-[13px] text-[#fca311]">{item.icon}</span>
@@ -217,7 +217,7 @@ export default function LandingPage() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 pt-10 border-t border-white/[0.06] flex items-center gap-10 flex-wrap">
+        <div className="mt-20 pt-10 border-t border-white/6 flex items-center gap-10 flex-wrap">
           {STATS.map((s) => (
             <div key={s.n}>
               <p className="text-[22px] font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
@@ -228,7 +228,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section id="features" className="py-24 px-6 border-t border-white/[0.06] max-w-[1100px] mx-auto">
+      <section id="features" className="py-24 px-6 border-t border-white/6 max-w-275 mx-auto">
         <div className="mb-14">
           <p className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#fca311] mb-3">Features</p>
           <h2 className="text-[clamp(28px,4vw,42px)] font-black tracking-tighter text-[#f0ede8] m-0">
@@ -236,7 +236,7 @@ export default function LandingPage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/6ded-2xl overflow-hidden">
           {FEATURES.map((f) => (
             <div
               key={f.title}
@@ -251,8 +251,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section id="how-it-works" className="py-24 px-6 border-t border-white/[0.06]">
-        <div className="max-w-[1100px] mx-auto">
+      <section id="how-it-works" className="py-24 px-6 border-t border-white/6">
+        <div className="max-w-275 mx-auto">
           <div className="mb-14">
             <p className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#fca311] mb-3">How it works</p>
             <h2 className="text-[clamp(28px,4vw,42px)] font-black tracking-tighter text-[#f0ede8] m-0">
@@ -263,7 +263,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
             {STEPS.map((s) => (
               <div key={s.n}>
-                <span className="block text-[11px] font-bold tracking-[0.1em] text-[#fca311]/50 mb-4">{s.n}</span>
+                <span className="block text-[11px] font-bold tracking-widest text-[#fca311]/50 mb-4">{s.n}</span>
                 <div className="w-8 h-0.5 bg-[#fca311] mb-5 rounded" />
                 <h3 className="font-bold text-lg text-[#f0ede8] mb-2.5 tracking-tight">{s.title}</h3>
                 <p className="text-sm leading-relaxed text-white/45 m-0">{s.desc}</p>
@@ -274,8 +274,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-28 px-6 border-t border-white/[0.06] bg-[#0d0d0d]">
-        <div className="max-w-[640px] mx-auto text-center">
+      <section className="py-28 px-6 border-t border-white/6 bg-[#0d0d0d]">
+        <div className="max-w-160auto text-center">
           <h2 className="text-[clamp(36px,5vw,60px)] font-black tracking-tighter text-[#f0ede8] mb-4 leading-[1.05]">
             Your link is<br />
             <em className="not-italic text-[#fca311]">waiting.</em>
@@ -294,8 +294,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#1a1a1f] border-t border-white/[0.06] px-10 py-12">
-      <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <footer className="bg-[#0d0d0d] border-t border-white/6 px-10 py-12">
+      <div className="max-w-275 mx-auto flex flex-col md:flex-row justify-between gap-10">
  
         {/* Left */}
         <div className="flex flex-col justify-between gap-16 max-w-xs">
