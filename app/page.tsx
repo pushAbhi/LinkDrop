@@ -64,11 +64,11 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-[#f0ede8] font-sans">
 
       {/* ── NAVBAR ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/85 backdrop-blur-md border-b border-white/6">
-        <div className="max-w-275 mx-auto px-6 h-15 flex items-center justify-between">
+      <nav className="fixed top-5 left-20 right-20 z-50 bg-[#161616]/85 backdrop-blur-md border-b border-white/6 rounded-full">
+        <div className="mx-auto h-15 flex items-center justify-between w-full py-5 px-10">
 
           {/* Logo */}
-          <span className="text-[18px] font-black tracking-tight">
+          <span className="text-2xl font-black tracking-tight">
             link<span className="text-[#fca311]">drop</span>
           </span>
 
@@ -141,9 +141,9 @@ export default function LandingPage() {
           {/* Left: copy */}
           <div>
             <h1 className="text-[clamp(42px,6vw,72px)] font-black leading-none tracking-tighter mb-6 text-[#f0ede8]">
-              Your whole<br />
-              internet life,<br />
-              <em className="not-italic text-[#fca311]">one link.</em>
+              Create Your<br />
+              page in,<br />
+              <em className="not-italic text-[#fca311]">seconds.</em>
             </h1>
 
             <p className="text-[17px] leading-relaxed text-white/55 mb-10 max-w-105">
