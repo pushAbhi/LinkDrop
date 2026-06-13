@@ -1,8 +1,8 @@
 
 import Link from "next/link";
+import Navbar from "./components/Navbar"
 
 import { Show } from "@clerk/nextjs";
-import MobileMenu from "./components/MobileMenu";
 
 type FooterLink = {
   label: string;
@@ -61,43 +61,10 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#f0ede8] font-sans">
 
-      {/* ── NAVBAR ── */}
-      <nav className="fixed top-5 left-20 right-20 z-50 bg-[#161616]/85 backdrop-blur-md border-b border-white/6 rounded-full">
-        <div className="mx-auto h-15 flex items-center justify-between w-full py-5 px-10">
-
-          {/* Logo */}
-          <span className="text-2xl font-black tracking-tight">
-            link<span className="text-[#fca311]">drop</span>
-          </span>
-
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-[13px] text-white/50 no-underline tracking-wide hover:text-white transition-colors">
-              Features
-            </a>
-            <a href="#how-it-works" className="text-[13px] text-white/50 no-underline tracking-wide hover:text-white transition-colors">
-              How it works
-            </a>
-            <Show when="signed-out">
-              <Link href="/sign-in" className="text-[13px] text-white/50 no-underline hover:text-white transition-colors">
-                Sign in
-              </Link>
-              <Link
-                href="/sign-up"
-                className="text-[13px] font-semibold text-[#0a0a0a] bg-[#fca311] px-5 py-2 rounded-lg no-underline tracking-tight hover:bg-amber-400 transition-colors"
-              >
-                Get started
-              </Link>
-            </Show>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <MobileMenu />
-      </nav>
+      <Navbar />
 
       {/* ── HERO ── */}
-      <section className="pt-36 pb-24 px-6 max-w-275 mx-auto">
+      <section className="pt-36 pb-24 px-6 max-w-275 mx-auto hero ">
 
         {/* Eyebrow */}
         <div className="mb-7">
@@ -124,7 +91,7 @@ export default function LandingPage() {
 
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/sign-up"
+                href="/dashboard"
                 className="inline-flex items-center gap-1.5 px-7 py-3.5 rounded-[10px] font-bold text-[15px] text-[#0a0a0a] bg-[#fca311] no-underline tracking-tight hover:bg-amber-400 transition-colors"
               >
                 Create your page
