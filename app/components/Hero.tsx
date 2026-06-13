@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { Show } from "@clerk/nextjs";
-import Image from "next/image"
-
 
 const LINKS = [
   { icon: "𝕏", label: "Twitter / X", clicks: "1.2k" },
@@ -18,8 +16,9 @@ const STATS = [
 
 export default function Hero() {
     return(
-      <section className="pt-36 pb-24 px-6 max-w-275 mx-auto hero ">
+      <section className="pt-48 pb-24 px-6 max-w-275 mx-auto z-50">
 
+        <div className="z-10">
         {/* Eyebrow */}
         <div className="mb-7">
           <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#fca311] border border-[#fca311]/25 px-3 py-1.5 rounded-full bg-[#fca311]/[0.07]">
@@ -70,7 +69,8 @@ export default function Hero() {
 
           {/* Right: product preview */}
           <div className="flex justify-center">
-            <div className="w-75 bg-[#111111] rounded-[20px] border border-white/8flow-hidden">
+
+            <div className="w-75 bg-[#111111] rounded-[20px] border border-white/8 flow-hidden">
 
               {/* Browser chrome */}
               <div className="px-4 py-3.5 border-b border-white/6 flex items-center gap-2.5">
@@ -122,6 +122,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
-      </section>
+          </div>
+      </section>  
     );
 }
