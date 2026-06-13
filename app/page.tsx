@@ -294,8 +294,9 @@ export default function LandingPage() {
           {Object.entries(footerLinks).map(([col, links]) => (
             <div key={col} className="flex flex-col gap-3">
               <p className="text-xs text-white/35 mb-1">{col}</p>
-              {links.map((link) =>
+              {links.map((link, index) =>
                   <Link
+                  key = {index}
                   href={link.href}>
                     {link.label}
                   </Link>
