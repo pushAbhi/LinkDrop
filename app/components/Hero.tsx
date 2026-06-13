@@ -18,7 +18,6 @@ export default function Hero() {
     return(
       <section className="pt-48 pb-24 px-6 max-w-275 mx-auto z-50">
 
-        <div className="z-10">
         {/* Eyebrow */}
         <div className="mb-7">
           <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#fca311] border border-[#fca311]/25 px-3 py-1.5 rounded-full bg-[#fca311]/[0.07]">
@@ -114,7 +113,7 @@ export default function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 pt-10 border-t border-white/6 flex items-center gap-20 flex-wrap justify-center">
+        <div className="mt-30 pt-10 border-t border-white/6 flex items-center gap-20 flex-wrap justify-center">
           {STATS.map((s) => (
             <div key={s.n} className="flex flex-col items-center">
               <p className="text-5xl font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
@@ -122,7 +121,6 @@ export default function Hero() {
             </div>
           ))}
         </div>
-          </div>
       </section>  
     );
 }
