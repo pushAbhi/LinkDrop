@@ -1,6 +1,5 @@
 import MobileMenu from "./MobileMenu";
 import { Show } from "@clerk/nextjs";
-import Image from "next/image"
 import Link from "next/link";
 
 export default function Navbar() {
