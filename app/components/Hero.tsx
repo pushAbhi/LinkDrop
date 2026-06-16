@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Show } from "@clerk/nextjs";
+import Image from "next/image"
 
 const LINKS = [
   { icon: "𝕏", label: "Twitter / X", clicks: "1.2k" },
@@ -9,9 +10,9 @@ const LINKS = [
 ];
 
 const STATS = [
-  { n: "10k+", label: "pages created" },
-  { n: "2M+", label: "total clicks tracked" },
-  { n: "<60s", label: "setup time" },
+  { n: "10k+", label: "pages created", ico:"/userIcon.svg" },
+  { n: "2M+", label: "total clicks tracked", ico:"/stocksUp.svg" },
+  { n: "<60s", label: "setup time", ico:"/lightning.svg" },
 ];
 
 export default function Hero() {
@@ -116,7 +117,10 @@ export default function Hero() {
         <div className="mt-30 pt-10 border-t border-white/6 flex items-center gap-20 flex-wrap justify-center">
           {STATS.map((s) => (
             <div key={s.n} className="flex flex-col items-center">
-              <p className="text-5xl font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
+              <div className="flex justify-center items-center gap-3">
+                <Image src={s.ico} alt="icon" width={50} height={50} />
+                <p className="text-5xl font-black text-[#f0ede8] m-0 tracking-tighter">{s.n}</p>
+              </div>
               <p className="text-xl text-white/35 mt-1 m-0 tracking-widest">{s.label}</p>
             </div>
           ))}
