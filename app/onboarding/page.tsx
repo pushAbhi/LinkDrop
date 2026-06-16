@@ -22,7 +22,8 @@ export default function OnboardingComponent() {
     }
   }
   return (
-    <div>
+    <div className='min-h-screen bg-black flex items-center justify-center'>
+    <div className='bg-red-500 p-10'>
       <h1>Welcome</h1>
       <form action={handleSubmit}>
         <div>
@@ -39,6 +40,7 @@ export default function OnboardingComponent() {
         {error && <p className="text-red-600">Error: {error}</p>}
         <button type="submit">Submit</button>
       </form>
+    </div>
     </div>
   )
 }
