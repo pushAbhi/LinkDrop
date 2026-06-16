@@ -1,16 +1,21 @@
 import MobileMenu from "./MobileMenu";
 import { Show } from "@clerk/nextjs";
 import Link from "next/link";
+import Image from "next/image"
+import logoIcon from "../public/bee.svg"
 
 export default function Navbar() {
   return (
       <nav className="fixed top-5 left-20 right-20 z-50 bg-[#161616]/85 backdrop-blur-md border-b border-white/6 rounded-full">
         <div className="mx-auto h-15 flex items-center justify-between w-full py-5 px-10">
 
-          {/* Logo */}
+        {/* Logo */}
+        <div className="flex justify-center items-center">
+          <Image src={logoIcon} alt="bee used as logo" width={50} height={50}/>
           <span className="text-2xl font-black tracking-tight">
             link<span className="text-[#fca311]">drop</span>
           </span>
+        </div>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
