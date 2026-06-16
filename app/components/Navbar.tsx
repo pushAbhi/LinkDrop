@@ -10,7 +10,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex justify-center items-center">
-          <Image src="/bee.svg" alt="bee used as logo" width={50} height={50}/>
+          <Image src="/bee2.svg" alt="bee used as logo" width={50} height={50}/>
           <span className="text-2xl font-black tracking-tight">
             link<span className="text-[#fca311]">drop</span>
           </span>

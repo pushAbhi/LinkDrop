@@ -3,9 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/bee.svg",
-  },
+  title: "LinkDrop"
 };
 
 export default function RootLayout({
