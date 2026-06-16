@@ -1,5 +1,12 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/bee.svg",
+  },
+};
 
 export default function RootLayout({
     children,

@@ -2,7 +2,6 @@ import MobileMenu from "./MobileMenu";
 import { Show } from "@clerk/nextjs";
 import Link from "next/link";
 import Image from "next/image"
-import logoIcon from "../public/bee.svg"
 
 export default function Navbar() {
   return (
@@ -11,7 +10,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex justify-center items-center">
-          <Image src={logoIcon} alt="bee used as logo" width={50} height={50}/>
+          <Image src="/bee.svg" alt="bee used as logo" width={50} height={50}/>
           <span className="text-2xl font-black tracking-tight">
             link<span className="text-[#fca311]">drop</span>
           </span>

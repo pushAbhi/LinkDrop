@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero";
 
 import Image from "next/image"
-import beehive from "./public/Beehive.png"
 
 type FooterLink = {
   label: string;
@@ -52,17 +51,18 @@ const STEPS = [
 export default function LandingPage() {
 
   return (
-    <div className="relative min-h-screen bg-[#000000] text-[#f0ede8] font-sans">
-
-      <Image src={beehive} alt="beehive" className="absolute top-25 left-0 z-0 w-screen h-screen object-cover"/>
+    <div className="relative min-h-screen bg-[#000000] text-[#f0ede8] font-sans overflow-hidden">
 
       {/* -----------------Navbar-------------- */}
       <Navbar />
 
       {/* --------------- HERO --------------------- */}
-      <main className="relative z-10">
-        <Hero />
-      </main>
+      <div className="relative h-screen overflow-hidden">
+        <Image src="/Beehive.png" alt="beehive" fill className="object-cover z-0 mt-25" />
+        <div className="relative z-10">
+          <Hero />
+        </div>
+      </div>
 
       {/* ── FEATURES ── */}
       <section id="features" className="py-24 px-6 border-t border-white/6 max-w-275 mx-auto">
