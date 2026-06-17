@@ -1,6 +1,6 @@
 # LinkDrop
 
-> A modern link management platform built with Next.js where users can create, manage, and organize their personal links.
+A modern link management platform built with Next.js where users can create, manage, and organize their personal links.
 
 LinkDrop allows users to create their own profile-style link collection, manage links, and track basic engagement metrics.
 
